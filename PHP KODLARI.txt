@@ -1,0 +1,12 @@
+<?php
+
+extract($_GET);
+
+$jsonData = array(
+    "name" => $name,
+    "age" => $age
+);
+
+echo json_encode($jsonData);
+
+// klasör içerisinde verilen yukle.php dosyasi xampp > htdocs içerisine atılacak
