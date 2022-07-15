@@ -1,12 +1,28 @@
 <?php
 
-extract($_GET);
+if (isset($_GET) && !empty($_GET)) {
 
-$jsonData = array(
-    "name" => $name,
-    "age" => $age
-);
+    extract($_GET);
 
-echo json_encode($jsonData);
+    $jsonData = array(
+        "name" => $name,
+        "age" => $age,
+        "status" => "GET"
+    );
 
-// klasör içerisinde verilen yukle.php dosyasi xampp > htdocs içerisine atılacak
+    echo json_encode($jsonData);
+}
+
+if (isset($_POST) && !empty($_POST)) {
+    
+    extract($_POST);
+
+    $jsonData = array(
+        "name" => $name,
+        "age" => $age,
+        "status" => "POST"
+    );
+
+    echo json_encode($jsonData);    
+
+}
