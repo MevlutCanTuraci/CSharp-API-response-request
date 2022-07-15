@@ -13,7 +13,7 @@ namespace ConsoleApp1
 
             // Api'den veri çekmek için;
 
-            var data = JsonClass.RequestAPI();
+            var data = JsonClass.RequestAPI_2();
 
             Console.WriteLine(data);
 
@@ -25,9 +25,21 @@ namespace ConsoleApp1
 
             // Api'ye veri göndermek
 
-            var dataResponse = JsonClass.SendRequestAPI();
+            var dataResponse = JsonClass.SendRequestAPI_POST(); // post yöntemi ile veri gönderme
 
-            Console.WriteLine(dataResponse);
+            Console.WriteLine($"Post -> {dataResponse}");
+
+
+            /*----------------------------------------------------------*/
+            Console.WriteLine("\r\n\n");
+            /*----------------------------------------------------------*/
+
+
+            // Api'ye veri göndermek
+
+            var dataResponseGet = JsonClass.SendRequestAPI_GET(); // get yöntemi ile veri gönderme
+
+            Console.WriteLine($"Get -> {dataResponseGet}");
 
 
             Console.Read();
